@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wakatipu Boat Adventure</title>
+        <link rel="stylesheet" href="style.css"> 
+        <script src="script.js"></script>
+    </head>
+    <body onload="init()">
+        <div class="navBar">
+            <a href="index.html" id="home" onclick="showHome()" >HOME</a>
+            <a href="#" id="book" onclick="showBook()">BOOK</a>
+            <a href="game/game.html" target="_blank">GAME</a>
+            <a href="WireFrame1.pdf" target="_blank">Documentation 1</a>
+            <a href="game/Wireframe.pdf" target="_blank">Documentation 2</a>
+
+        </div>
+        <section id="content">
+            <div id="Home" style="display:flex">
+                <h1 style="top:30px; left: 10%;right:10%; font-size: 40px;position:absolute;
+                text-align: center;color: #262936;"
+                id="headingLakeWakatipu" onclick="changeText()">Lake Wakatipu</h1>
+                <div class="slide">
+                    <video controls autoplay muted>
+                        <source src="video.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="description">
+                    <p>Lake Wakatipu is the third largest lake in New Zealand and at 84 km long, it’s
+                        also the longest. Its name comes from Maori, Whakatipu wai-māori, which could mean “growing bay” or 
+                        “bay of spirits”, depending on the translation of the historic Southern dialect.</p><br>
+                    <p>The Z-shaped lake was carved out by a glacier more than 15,000 years ago during the last ice age.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div id="booking"  style="display:none" >
+
+                <!-- flex -->
+                <div id="stage1"  style="display:flex" >
+                    <div id="WeatherContainer" style="position: absolute; right: 10px;top: 10px;">
+                        <button id="weatherbtn"  onmouseenter="showModal()" style=" width:70px;height: 40px;
+                        background-color: #dfe3e1 ;"
+                         onmouseleave="closeModal()">Weather</button>
+                    </div>
+                    <div id="myModal" class="modal">
+                        <div class="ModalHeading">
+                            <h1>Queenstown Weather</h1>
+                            <h3>Forecast</h3>
+                        </div>
+                        <!-- Modal content -->
+                        <div class="content_container" id="c_container">
+                        </div>
+                       
+                      
+                    </div>
+                    <div class="break"></div>
+                    <div class="box">
+                        <label for = "adults"><h3>Tickets Needed?</h3></label>
+                        <input type = "number" id = "adults" name = "adults" min = "1" value = "1" onfocus="st1Change()">
+                    </div>
+                    <div class="box">
+                        <label for = "bookingDate"><h3>Pick Date</h3></label>
+                        <input type = "date" id = "bookingDate" name = "bookingDate" onfocus="st1Change()">
+                    </div>
+                    <div class="break"></div>
+                    <div class="box_button">
+                        <button id="checkAvailability"  onclick="showTrips()">Check Availability</button>
+                    </div>
+
+                </div>
+
+
+                <div id="stage1_1"  style="display:none" >
+                    <table>
+                        <tr>
+                            <td id="imageCell"><div class="boatImage" id="Tere"
+                                style="background-image: url(Images/boatTere.jpg);
+                                background-size: cover;
+                                background-repeat: no-repeat;"></div></td>
+                            <td id="Tere Boat Desc" class="descCell">
+                                <h1 id="boatName" style=" color:brown; font-family:monospace;">Boat: Tere</h1>
+                                <p><i>You will never go wrong with Tere boat crusing around Lake Wakatipu.</i></p>
+                                <h4 id="available_Tere"></h4>
+                                <h4>Occupancy: </h4><label id="Capacity">65</label>
+                                
+                            </td>
+                            <td id="boatCell" style="text-align:left;width:100px;height:150px;padding:10px;">
+                                <div id="Tere Boat" class="trips">
+                                    <input
+                                    type="radio" id="trip_checkbox" name="trip" value="10:00am" onclick="checkAvailablility()">
+                                    <h4 id="date_label"></h4>
+                                    <h4>10:00</h4>
+                                </div></td>
+                            <td id="boatCell"style="text-align:left;width:100px;height:150px;padding:10px;">
+                                <div id="Tere Boat" class="trips">
+                                    <input type="radio" id="trip_checkbox" name="trip" value="2:00pm" onclick="checkAvailablility()">
+                                    <h4 id="date_label"></h4>
+                                    <h4>14:00</h4>
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <td id="imageCell"><div class="boatImage" id="Nui" 
+                                style="background-image: url(Images/boatNiu.jfif);
+                                background-size: cover;"></div></td>
+                            <td id="Nui Boat Desc" class="descCell">
+                                <h1 id="boatName" style=" color:brown; font-family:monospace;">Boat: Nui</h1>
+                                <p><i>Niu boat arrived in New Zealand about 5 years ago and a major part of our fleet.</i></p>
+                                <h4 id="available_Nui"></h4>
+                                <h4>Occupancy: </h4><label id="Capacity">90</label>
+                                
+                            </td>
+                            <td id="boatCell">
+                                <div id="Nui Boat" class="trips">
+                                    <input type="radio" id="trip_checkbox" name="trip" value="10:00am" onclick="checkAvailablility()">
+                                    <h4 id="date_label"></h4>
+                                    <h4>10:00</h4>
+                                </div></td>
+                            <td id="boatCell">
+                                <div id="Nui Boat" class="trips">
+                                    <input type="radio" id="trip_checkbox" name="trip" value="2:00pm" onclick="checkAvailablility()">
+                                    <h4 id="date_label"></h4>
+                                    <h4>16:00</h4>
+                                </div></td>
+                        </tr>
+                    </table>
+                    <div class="break"></div>
+                    <div class="box_button">
+                        <input type = "button"  id="btnBook" value = "BOOK" class="book" onclick = "tripSelected()">
+                    </div>
+
+                </div>
+
+                <div id="stage2" style=" margin-left: auto;margin-right: auto;padding: auto;padding-bottom: 100px;
+                                         position: relative;display: flex;background-color:rgba(250, 250, 210, 0.321);
+                                         width: 100%;height: auto;flex-flow: row wrap;border-radius: 5px;
+                display: none;">
+                    <div id="progress" style="width: 100%; height: 100px;">
+                        <div class="progress">
+                            <div class="bar">
+                                <div class="bar_filled"></div>
+                            </div>
+                                <div class="progress_points">
+                                
+                                    <div class="point">
+                                        <div id="bul1" class="bullet  point--complete"></div>
+                                        <div class="label label_complete">Trip Selection</div>
+                                    </div>
+                                    <div class="point">
+                                        <div id="bul2" class="bullet point--complete point--active"></div>
+                                        <div class="label label_complete">Seat</div>
+                                    </div>
+                                    <div class="point">
+                                        <div id="bul3" class="bullet"></div>
+                                        <div class="label">Food</div>
+                                    </div>
+                                    <div class="point">
+                                        <div id="bul4" class="bullet"></div>
+                                        <div class="label">Review</div>
+                                    </div>
+                                </div>
+                              
+                        </div>
+
+                    </div>
+                    <div class="break"></div>
+                    
+                    <div class="container" id="boatContainer" style="display:flex; background-color: whitesmoke;
+                    border-radius: 5px;margin-left: 10px;">
+                        <div id="Tere Boat Container" class="nui_boat" style="display:none">
+                            <table id="tereTable">
+                                <tr>
+                                    <td class="blank"></td>
+                                    <td class="seat">A1</td>
+                                    <td class="seat">A2</td>
+                                    <td class="seat">A3</td>
+                                    <td class="rowNum">A</td>
+                                    <td class="seat">A4</td>
+                                    <td class="seat">A5</td>
+                                    <td class="seat">A6</td>
+                                    <td class="blank"></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank"></td>
+                                    <td class="seat">B1</td>
+                                    <td class="seat">B2</td>
+                                    <td class="seat">B3</td>
+                                    <td class="rowNum">B</td>
+                                    <td class="seat">B4</td>
+                                    <td class="seat">B5</td>
+                                    <td class="seat">B6</td>
+                                    <td class="blank"></td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">C1</td>
+                                    <td class="seat">C2</td>
+                                    <td class="seat">C3</td>
+                                    <td class="seat">C4</td>
+                                    <td class="rowNum">C</td>
+                                    <td class="seat">C5</td>
+                                    <td class="seat">C6</td>
+                                    <td class="seat">C7</td>
+                                    <td class="seat">C8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">D1</td>
+                                    <td class="seat">D2</td>
+                                    <td class="seat">D3</td>
+                                    <td class="seat">D4</td>
+                                    <td class="rowNum">D</td>
+                                    <td class="seat">D5</td>
+                                    <td class="seat">D6</td>
+                                    <td class="seat">D7</td>
+                                    <td class="seat">D8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">E1</td>
+                                    <td class="seat">E2</td>
+                                    <td class="seat">E3</td>
+                                    <td class="seat">E4</td>
+                                    <td class="rowNum">E</td>
+                                    <td class="seat">E5</td>
+                                    <td class="seat">E6</td>
+                                    <td class="seat">E7</td>
+                                    <td class="seat">E8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">F1</td>
+                                    <td class="seat">F2</td>
+                                    <td class="seat">F3</td>
+                                    <td class="seat">F4</td>
+                                    <td class="rowNum">F</td>
+                                    <td class="seat">F5</td>
+                                    <td class="seat">F6</td>
+                                    <td class="seat">F7</td>
+                                    <td class="seat">F8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">G1</td>
+                                    <td class="seat">G2</td>
+                                    <td class="seat">G3</td>
+                                    <td class="seat">G4</td>
+                                    <td class="rowNum">G</td>
+                                    <td class="seat">G5</td>
+                                    <td class="seat">G6</td>
+                                    <td class="seat">G7</td>
+                                    <td class="seat">G8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">H1</td>
+                                    <td class="seat">H2</td>
+                                    <td class="seat">H3</td>
+                                    <td class="seat">H4</td>
+                                    <td class="rowNum">H</td>
+                                    <td class="seat">H5</td>
+                                    <td class="seat">H6</td>
+                                    <td class="seat">H7</td>
+                                    <td class="seat">H8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">I1</td>
+                                    <td class="seat">I2</td>
+                                    <td class="seat">I3</td>
+                                    <td class="seat">I4</td>
+                                    <td class="rowNum">I</td>
+                                    <td class="seat">I5</td>
+                                    <td class="seat">I6</td>
+                                    <td class="seat">I7</td>
+                                    <td class="seat">I8</td>
+                                </tr>
+                                <tr>
+                                    <td class="blank"></td>
+                                    <td class="seat">J1</td>
+                                    <td class="seat">J2</td>
+                                    <td class="seat">J3</td>
+                                    <td class="rowNum">J</td>
+                                    <td class="seat">J4</td>
+                                    <td class="seat">J5</td>
+                                    <td class="seat">J6</td>
+                                    <td class="blank"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div id="Nui Boat Container" class="nui_boat" style="display:none">
+                            <table id="nuiTable">
+                                <tr>
+                                    <td class="blank"></td>
+                                    <td class="blank"></td>
+                                    <td class="seat">A1</td>
+                                    <td class="seat">A2</td>
+                                    <td class="rowNum">A</td>
+                                    <td class="seat">A3</td>
+                                    <td class="seat">A4</td>
+                                    <td class="blank"></td>
+                                    <td class="blank"></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank"></td>
+                                    <td class="blank"></td>
+                                    <td class="seat">B1</td>
+                                    <td class="seat">B2</td>
+                                    <td class="rowNum">B</td>
+                                    <td class="seat">B3</td>
+                                    <td class="seat">B4</td>
+                                    <td class="blank"></td>
+                                    <td class="blank"></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank"></td>
+                                    <td class="seat">C1</td>
+                                    <td class="seat">C2</td>
+                                    <td class="seat">C3</td>
+                                    <td class="rowNum">C</td>
+                                    <td class="seat">C4</td>
+                                    <td class="seat">C5</td>
+                                    <td class="seat">C6</td>
+                                    <td class="blank"></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank"></td>
+                                    <td class="seat">D1</td>
+                                    <td class="seat">D2</td>
+                                    <td class="seat">D3</td>
+                                    <td class="rowNum">D</td>
+                                    <td class="seat">D4</td>
+                                    <td class="seat">D5</td>
+                                    <td class="seat">D6</td>
+                                    <td class="blank"></td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">E1</td>
+                                    <td class="seat">E2</td>
+                                    <td class="seat">E3</td>
+                                    <td class="seat">E4</td>
+                                    <td class="rowNum">E</td>
+                                    <td class="seat">E5</td>
+                                    <td class="seat">E6</td>
+                                    <td class="seat">E7</td>
+                                    <td class="seat">E8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">F1</td>
+                                    <td class="seat">F2</td>
+                                    <td class="seat">F3</td>
+                                    <td class="seat">F4</td>
+                                    <td class="rowNum">F</td>
+                                    <td class="seat">F5</td>
+                                    <td class="seat">F6</td>
+                                    <td class="seat">F7</td>
+                                    <td class="seat">F8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">G1</td>
+                                    <td class="seat">G2</td>
+                                    <td class="seat">G3</td>
+                                    <td class="seat">G4</td>
+                                    <td class="rowNum">G</td>
+                                    <td class="seat">G5</td>
+                                    <td class="seat">G6</td>
+                                    <td class="seat">G7</td>
+                                    <td class="seat">G8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">H1</td>
+                                    <td class="seat">H2</td>
+                                    <td class="seat">H3</td>
+                                    <td class="seat">H4</td>
+                                    <td class="rowNum">H</td>
+                                    <td class="seat">H5</td>
+                                    <td class="seat">H6</td>
+                                    <td class="seat">H7</td>
+                                    <td class="seat">H8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">I1</td>
+                                    <td class="seat">I2</td>
+                                    <td class="seat">I3</td>
+                                    <td class="seat">I4</td>
+                                    <td class="rowNum">I</td>
+                                    <td class="seat">I5</td>
+                                    <td class="seat">I6</td>
+                                    <td class="seat">I7</td>
+                                    <td class="seat">I8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">J1</td>
+                                    <td class="seat">J2</td>
+                                    <td class="seat">J3</td>
+                                    <td class="seat">J4</td>
+                                    <td class="rowNum">J</td>
+                                    <td class="seat">J5</td>
+                                    <td class="seat">J6</td>
+                                    <td class="seat">J7</td>
+                                    <td class="seat">J8</td>
+                                </tr>
+                                <tr>
+                                    <td class="seat">K1</td>
+                                    <td class="seat">K2</td>
+                                    <td class="seat">K3</td>
+                                    <td class="seat">K4</td>
+                                    <td class="rowNum">K</td>
+                                    <td class="seat">K5</td>
+                                    <td class="seat">K6</td>
+                                    <td class="seat">K7</td>
+                                    <td class="seat">K8</td>
+                                </tr>
+                                <tr>
+                                    <td class="blank"></td>
+                                    <td class="seat">L2</td>
+                                    <td class="seat">L3</td>
+                                    <td class="seat">L4</td>
+                                    <td class="rowNum">L</td>
+                                    <td class="seat">L5</td>
+                                    <td class="seat">L6</td>
+                                    <td class="seat">L7</td>
+                                    <td class="blank"></td>
+                                </tr>
+                                <tr>
+                                    <td class="blank"></td>
+                                    <td class="seat">M2</td>
+                                    <td class="seat">M3</td>
+                                    <td class="seat">M4</td>
+                                    <td class="rowNum">M</td>
+                                    <td class="seat">M3</td>
+                                    <td class="seat">M6</td>
+                                    <td class="seat">M7</td>
+                                    <td class="blank"></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="container" id="foodContainer" style="display:none">
+                        <div id="foodMenu"  class="food_menu" style="display:block">
+                            <div class="tabs">
+                                <button class="tabbutton" onclick="openContent(event, 'Food')">FOOD</button>
+                                <button class="tabbutton" onclick="openContent(event, 'Drinks')">DRINKS</button>
+                            </div>
+                            <div id="Food" class="tabcontent" style="display: block ;" >
+                                <table id="foodtable">
+
+                                </table>
+
+                            </div>
+                            
+                            <div id="Drinks" class="tabcontent" >
+                                <table id="drinkstable">
+                                    
+                                </table>
+                            </div>
+                        </div>
+                        
+                        
+
+                    </div>
+                    <div class="container" id="reviewContainer" style="display:none">
+                        <h1>Booking Person Information</h1>
+                        <br>
+                        <div id="formContainer">
+                            <label id="formlabel" for="email"><b>Email:</b></label>
+                            <input type="text" placeholder="Enter Email" name="email" >
+    
+                            <label  id="formlabel"for="fname"><b>First Name:</b></label>
+                            <input type="text" placeholder="Enter First Name" name="fname" >
+    
+                            <label id="formlabel" for="lname"><b>Last Name:</b></label>
+                            <input type="text" placeholder="Enter Last Name" name="lname">                     
+    
+                            <h2>Select Payment Method</h2>
+                            <div id="paymentItems">
+                                <input type="radio" name="paymentMethod">
+                                <H4 id="formlabel">Cash</H4>
+                            </div>
+                            <div id="paymentItems">
+                                <input type="radio" name="paymentMethod", checked>
+                                <H4 id="formlabel">VISA Debit/Credit Card</H4>
+                            </div>
+                            <div id="paymentItems">
+                                <input type="radio" name="paymentMethod">
+                                <H4 id="formlabel">Poli</H4>
+                            </div>
+                            <div class="break"></div>
+                            <div id="proceedC" class="container_button">
+                                <button id="btnCheck"  onclick="bookSeat()">CHECKOUT</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+
+                    <div id="bookingInformation" style="display:block">
+                        <br>
+                        <H2>Booking Summary</H2>
+                        
+                        
+                        
+                        <table id="boat_table">
+                            <tr id="bookingSummary">
+                                <td><H3>Trip Information</H3></td>
+                                <td></td>
+                            </tr>
+                            <tr id="bookingSummary">
+                                <td> Boat Name:</td>
+                                <td id="tripBoat"></td>
+                            </tr>
+                            <tr id="bookingSummary">
+                                <td> Date:</td>
+                                <td id="tripDate"></td>
+                                
+                            </tr>
+                            <tr id="bookingSummary">
+                                <td> Time:</td>
+                                <td id="tripTime"></td>
+                            </tr>
+
+                            <tr id="bookingSummary">
+                                <td> Seat(s) Requested: </td>
+                                <td id="tripSeat"></td>
+                            </tr>
+                            <tr id="bookingSummary">
+                                <td> Seat Number(s): </td>
+                                <td id="seatSelected"></td>
+                            </tr>
+                            
+                        </table>
+
+                        <table id="food_table">
+                            
+                        </table>
+
+                        <div class="cart-footer">
+                            <div class="subtotal">
+                                 Total: <h4 id="priceSofar"></h4>
+                            </div>
+                        </div>
+
+                        
+                        <!-- <div id="Checkout" style="display:none">
+                            <div class="BookingPerson">
+                                <h2>Booking Person Details</h2>
+                                <h4 id="p_email">4</h2>
+                                <h4 id="p_fullname">4</h2>
+                            </div>
+                            <h2>Select Payment Method</h2>
+                            <div id="paymentItems">
+                                <input type="radio" name="paymentMethod">
+                                <H4>Cash</H4>
+                            </div>
+                            <div id="paymentItems">
+                                <input type="radio" name="paymentMethod", checked>
+                                <H4>Credit Card</H4>
+                            </div>
+                            <div id="paymentItems">
+                                <input type="radio" name="paymentMethod">
+                                <H4>Paypal</H4>
+                            </div>
+                            
+                        </div> -->
+                    
+                      
+                        
+                        
+                    
+
+
+                    </div>
+
+
+                    <div class="break"></div>
+                    <div class="container_button" id="proceed_container">
+                        <button id="btnProceed"  onclick="proceed()">PROCEED</button>
+                    </div>
+
+                
+
+            </div>
+
+        </section>
+
+    </body>
+</html>

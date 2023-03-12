@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<MenuItems>
+    <Item>
+        <ID>1</ID>
+        <Name>Mexican Katsu chicken Roll</Name>
+        <Description>Katsu Chicken，capsicum，cucumber，roasted sesame seeds roll with our strong chilli sauce and house made spicy Mayo on top.</Description>
+        <Type>Images/gluten-free.png</Type>
+        <Category>Food</Category>
+        <Image>Images/Mexican_Katsu_chicken_Roll.png</Image>
+        <Unit>1</Unit>
+        <Cost>13.90</Cost>
+    </Item>
+    <Item>
+        <ID>2</ID>
+        <Name>Chicken Bowl(Best Seller)</Name>
+        <Description>10pcs Japanese style deep fried chicken with rice and salad bowl
+        ，drizzled with teriyaki sauce and Japanese mayo. </Description>
+        <Type>Images/no-egg.png</Type>
+        <Category>Food</Category>
+        <Image>Images/chicken_bowl.png</Image>
+        <Unit>1</Unit>
+        <Cost>16.90</Cost>
+    </Item>
+    <Item>
+        <ID>3</ID>
+        <Name>Salmon and Avocado Sushi</Name>
+        <Description>90gram fresh NZ King Salmon and avocado sushi roll（mega size）</Description>
+        <Type>Images/no-egg.png</Type>
+        <Category>Food</Category>
+        <Image>Images/avocado_sushi.png</Image>
+        <Unit>1</Unit>
+        <Cost>18.80</Cost>
+    </Item>
+    <Item>
+        <ID>4</ID>
+        <Name>Angus Steak and Cheese Pie</Name>
+        <Description>This is a big one! Loaded with chunks of tender angus steak and oozing with delicious cheese.</Description>
+        <Type>Images/gluten-free.png</Type>
+        <Category>Food</Category>
+        <Image>Images/pie.png</Image>
+        <Unit>1</Unit>
+        <Cost>7.30</Cost>
+    </Item>
+    <Item>
+        <ID>5</ID>
+        <Name>Vegetarian falafel Wrap</Name>
+        <Description>falafel,avocado,salad and ranch sauce.</Description>
+        <Type>Images/vegan.png</Type>
+        <Category>Food</Category>
+        <Image>Images/veg-wrap.png</Image>
+        <Unit>1</Unit>
+        <Cost>10.90</Cost>
+    </Item>
+
+    <Item>
+        <ID>6</ID>
+        <Name>Caramel Slice</Name>
+        <Description>A classic brownie base topped with a layer of rich caramel and finished with a chocolate ganache.</Description>
+        <Type>Images/gluten-free.png</Type>
+        <Category>Food</Category>
+        <Image>Images/caramel_slice.png</Image>
+        <Unit>1</Unit>
+        <Cost>5.50</Cost>
+    </Item>
+    <Item>
+        <ID>7</ID>
+        <Name>Custard Slice</Name>
+        <Description>Our most popular slice, try this true kiwi classic of pastry and custard topped with vanilla icing. </Description>
+        <Type>none</Type>
+        <Category>Food</Category>
+        <Image>Images/custard_slice.png</Image>
+        <Unit>1</Unit>
+        <Cost>5.50</Cost>
+    </Item>
+
+    <Item>
+        <ID>8</ID>
+        <Name>Milk Foam Black Tea</Name>
+        <Description>Iced cold black tea with milk cream at top.</Description>
+        <Type>Images/sugar-free.png</Type>
+        <Category>Drinks</Category>
+        <Image>Images/black_tea.png</Image>
+        <Unit>1</Unit>
+        <Cost>5.90</Cost>
+    </Item>
+    <Item>
+        <ID>9</ID>
+        <Name>Coke</Name>
+        <Description>350ml coke no sugar</Description>
+        <Type>Images/sugar-free.png</Type>
+        <Category>Drinks</Category>
+        <Image>Images/coke.png</Image>
+        <Unit>1</Unit>
+        <Cost>2.90</Cost>
+    </Item>
+    <Item>
+        <ID>10</ID>
+        <Name>Mineral water Water</Name>
+        <Description>650ml mineral water</Description>
+        <Type>none</Type>
+        <Category>Drinks</Category>
+        <Image>Images/mineral_water.png</Image>
+        <Unit>1</Unit>
+        <Cost>2.90</Cost>
+    </Item>
+
+</MenuItems>

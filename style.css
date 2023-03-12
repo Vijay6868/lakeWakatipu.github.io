@@ -1,0 +1,621 @@
+*{
+    margin:0;
+    padding: 0;
+    
+}
+body{
+    background-image: url(Images/backImage.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+a{
+    text-decoration: none;
+}
+
+
+.navBar {
+
+   
+    padding:8px 50px 8px 50px;
+    overflow: hidden;
+    background-color:green;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+   
+    font-size: larger;
+   
+    
+  }
+ 
+.navBar a {
+    
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 15px;
+    width:14%;
+    border-radius: 50px;
+  }
+.navBar a:hover {
+    background-color:darkcyan;
+    color: orange;
+  }
+
+
+
+#Home, #booking{
+    top:30px;
+    margin: auto;
+    position: relative;
+    width:80%;
+    height: auto;
+    display:block;
+    padding:100px 60px 100px 60px;
+    background-color: skyblue;
+    
+}
+
+.slide{
+    overflow: hidden;
+    flex:35%;
+    
+}
+
+video{
+    width:90%; 
+    height: auto; 
+}
+.description{
+
+    flex:30%;
+    width: 30%;
+    height: auto;
+
+    position:relative;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: left;
+}
+
+
+
+#stage1, #stage1_1{
+    margin:auto;
+    margin-bottom:45px;
+    position:relative;
+    background-color:lightseagreen;
+    width: 70%;
+    height: auto;
+    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    padding:60px;
+    
+    
+}
+
+.box{
+
+    padding:5px;
+    width:35%;
+    height: auto;
+    margin: 15px;
+	position: relative;
+	overflow: hidden;
+	text-align: left;
+    
+
+}
+.box input{
+    width: auto;
+}
+.box_button{
+    height: 50px;
+    position: absolute;
+    bottom: 5px;
+}
+
+
+
+
+.modal{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding:20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto; 
+    height: auto; 
+    background-color: rgb(231, 247, 250,0.9); 
+
+  }
+  .ModalHeading{
+    height:40px;
+    margin-left:auto;
+    margin-right: auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content {
+    background-color: lightgrey;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 30px;
+    border-radius: 40px;
+    width: 350px;
+    height: 50px;
+    display: flex;
+
+  }
+  .WeatherDate{
+    font-family:monospace;
+    font-size: 40px;
+    font-weight: 400;
+    color: #fefefe;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    
+    
+  }
+  .WeatherIcon{
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    background-color:none;
+    border-radius: 10px;
+  }
+
+  .WeatherIcon img{
+    width:50px;
+    height:50px;
+  }
+  .WeatherTemp{
+    width: 120px;
+    height: 65px;
+    
+    border-radius: 10px;
+    font-family:monospace;
+    font-size: 40px;
+    font-weight: 600;
+    color: rgb(78, 78, 78);;
+    text-align: left;
+  }
+    
+  
+  
+  
+/* ========================================== */
+
+
+
+.break{
+    flex-basis: 100%;
+    height:0;
+}
+    
+.boatImage{
+    height:95%;
+    width:85%;   
+    
+}
+#imageCell{
+    width:200px;
+    height:150px;
+}
+.descCell{
+    width:300px;
+}
+.descCell p, h4, label{
+    
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+
+
+.trips{
+    margin-top: 20px;
+    position: relative;
+  
+   border-radius: 2px;
+    width:80%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color:whitesmoke;
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+
+}
+
+
+
+.container{
+    margin-top:40px;
+    flex: 50%;
+    flex-direction: column;
+    text-align: center;
+}
+.container_button{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    
+}
+
+
+.tere_boat, .nui_boat, .food_menu{
+    padding: 20px;
+    display: block;
+    margin:auto;
+}
+
+
+input[type=date], input[type=number]{
+    padding: 15px;
+    margin: auto;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+#checkAvailability, #btnBook, #btnProceed, #btnCheck{
+    
+    background-color:yellow;
+    color: #262936;
+   
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: auto;
+    display: inline-block;
+    right:auto;
+    
+}
+/* ===================guest===================  */
+#reviewContainer{
+    border: 2px solid #262936;
+    position: relative;
+    height: auto;
+    margin:50px;
+    padding: 50px;
+    text-align: left;
+    
+}
+#formContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #262936;;
+}
+
+#formlabel{
+    color: #262936;;
+}
+
+input[type=text]{
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+input[type=text]:focus{
+    background-color: #ddd;
+    outline: none;
+  }
+
+/* =================checkout===================== */
+
+#paymentItems{
+    display:flex;
+    border: 2px solid #262936;
+    border-radius: 10px;
+    width:70%;
+    height: 40px;
+    margin-bottom: 5px;
+    bottom: 35px;
+    color: #262936;
+}
+
+
+
+
+
+
+/* =================booking summary============ */
+
+#bookingInformation{
+    border-radius: 3px;
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color:whitesmoke;
+    margin:45px;
+    text-align: center;
+    flex:20%;
+   
+    padding: 16px 21px 16px 21px;
+ 
+   
+}
+
+#bookingInformation table{
+    width: 100%;
+    height: auto;
+}
+
+.cartbtn{
+    width: 30px;
+    height: 30px;
+    padding:10px;
+    margin: 5px;
+    background-color: rgb(207, 211, 160);
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cell{
+    display: flex;
+    width: 150px;
+    padding: 5px;
+}
+  
+  /* cart footer */
+  .cart-footer {
+    width: 100%;
+    background-color: rgb(255, 21, 21);
+
+  
+    border-left: 1px solid rgb(var(--right-side-bg-color));
+  }
+  .cart-footer div {
+    display: flex;
+    background-color: white;
+    padding: 15px;
+    font-size: 1.3rem;
+  }
+
+  #priceSofar{
+    color: #262936;
+    position: absolute;
+    right:50px;
+  }
+
+/* =============seat class==============  */
+.seat{
+    background-image: url(Images/defaultSeat.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+	cursor:pointer;    
+    border: 2px solid  rgb(175, 180, 180);
+    border-radius: 5px
+}
+.seat:hover{
+    border: 2px solid  darkgreen;
+   
+}
+#selected{
+    background-image: url(Images/selectedSeat.png);
+}
+
+.seated{
+    background-image: url(Images/takenSeat.png);
+    background-size: contain;
+    background-repeat: no-repeat; 
+    border: 2px solid  rgb(175, 180, 180);
+    border-radius: 5px
+}
+
+.seated:hover{
+    border: 2px solid  rgb(211, 67, 42);
+}
+
+.blank, .seat, .seated, .aisle {
+	color: aliceblue;
+    text-align:center;
+    font-size:10px;
+    font-family:Arial, Helvetica, sans-serif;
+	width:40px;
+	height:40px;
+	padding:5px; 
+}
+.rowNum{
+    font-size:large;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: teal;
+    text-align:center;
+    padding: 15px;
+}
+
+
+
+
+#bookingSummary, #foodCell{
+    padding:10px;
+    text-align:left;
+	
+	height:30px;
+	
+}
+
+
+/* ===============Menu======================= */
+
+.tabs {
+    height: 50px;
+    width: auto;
+    /* clear: both; */
+    overflow:hidden;
+    border: 1px solid black;
+    background-color:teal;
+  }
+
+.tabs button {
+    background-color: inherit;
+    width:50%;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    /* transition: 0.3s; */
+    font-size: 17px;
+  }
+.tabs button:hover {
+    background-color: #ddd;
+  }
+
+.tabs button.active {
+    background-color: #ccc;
+  }
+
+.tabcontent {
+    width: 600px;
+    height: auto;
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  /* ===============menu items=================== */
+
+#quantity, #costCell, #foodSum{
+    width: 50px;
+    height:30px;
+    padding: 5px;
+  }
+.btn_add{
+    width: 50px;
+    height:30px;
+    padding: 5px;
+    margin:10px;
+    border-radius: 2px;
+    color: #262936;
+    font-weight: 200;
+    
+  }
+
+#foodtype img{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+  }
+
+#menuCell{
+    width: 300px;
+    height:100px;
+  }
+/* 
+
+
+/* ===============progress bar==================== */
+
+.progress {
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    
+}
+.bar {
+    display: flex;
+    position: absolute;
+    background:white;
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    z-index: 0;
+}
+.bar_filled {
+    display: block;
+    position: absolute;
+    width: 33.33%;
+    height: 100%;
+    left: 0;
+    background:teal;
+    transition: width 0.6s ease-out;
+}
+.progress_points {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 8px;
+    padding: 0 !important;
+    z-index: 1;
+  }
+.point {
+    display: flex;
+    align-items: center;
+    flex: 0 0 33.33%;
+    justify-content: left;
+    position: relative;
+    color: teal;
+    cursor: pointer;
+} 
+.bullet {
+    display: flex;
+    z-index: 2;
+    position: relative;
+    background: teal;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    left: 0;
+    top: 0;
+}
+.label {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 20px 0 0 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transform: translate(-50%, 0);
+  }
+.point--complete, .point--active {
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0,0,0, 0.2), 0 0 0 6px teal;
+}
+.point--active {
+    box-shadow: 0 2px 4px rgba(0,0,0, 0.2), 0 0 0 10px teal;
+}
+.label_complete {
+    color: teal;
+}
+
+
+  

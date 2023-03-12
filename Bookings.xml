@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<BookingList>
+    <Booking>
+        <Reference>A01</Reference>
+        <Boat>Tere Boat</Boat>
+        <Date>2022-11-17</Date>
+        <Time>10:00am</Time>
+        <Seat>A1</Seat>
+        <Person>David</Person> 
+        <Food>null</Food>
+        <Total>35</Total>
+    </Booking>
+    <Booking>
+        <Reference>A02</Reference>
+        <Boat>Tere Boat</Boat>
+        <Date>2022-11-17</Date>
+        <Time>10:00am</Time>
+        <Seat>A4</Seat>
+        <Person>John Wick</Person> 
+        <Food>null</Food>
+        <Total>70</Total>
+    </Booking>
+    <Booking>
+        <Reference>A03</Reference>
+        <Boat>Tere Boat</Boat>
+        <Date>2022-11-17</Date>
+        <Time>10:00am</Time>
+        <Seat>A2</Seat>
+        <Person>John Carter</Person> 
+        <Food>null</Food>
+        <Total>90</Total>
+    </Booking>
+
+</BookingList>
